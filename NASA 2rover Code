@@ -1,0 +1,105 @@
+#project -3 use 2 rover to move
+x1= 1
+y1 = 2
+x2 = 3
+y2 = 3
+direction1 = "N"
+direction2="E"
+
+
+def turnleft1():
+  print("turning left")
+  global direction1
+  if direction1 == "N":
+    direction1 = "W"
+  elif direction1 == "W":
+    direction1 = "S"
+  elif direction1 == "S":
+    direction1 = "E"
+  elif direction1 == "E":
+    direction1 = "N"
+
+def turnright1():
+  print("turning Right")
+  global direction1
+  if direction1 == "N":
+    direction1 = "E"
+  elif direction1 == "E":
+    direction1 = "S"
+  elif direction1 == "S":
+    direction1 = "W"
+  elif direction1 == "W":
+    direction1 = "N"
+
+def moveforward1():
+  print("Moving Forward")
+  global x1,y1,direction1
+  if direction1 == "N":
+      y1 = y1 + 1
+  elif direction1 == "E":
+      x1 = x1 + 1
+  elif direction1 == "S":
+      y1 = y1 - 1
+  elif direction1 == "W":
+      x1 = x1 - 1
+#rover2
+def turnleft2():
+  print("turning left")
+  global direction2
+  if direction2 == "N":
+    direction2= "W"
+  elif direction2 == "W":
+    direction2 = "S"
+  elif direction2 == "S":
+    direction2 = "E"
+  elif direction2 == "E":
+    direction2 = "N"
+
+def turnright2():
+  print("turning Right")
+  global direction2
+  if direction2 == "N":
+    direction2 = "E"
+  elif direction2 == "E":
+    direction2 = "S"
+  elif direction2 == "S":
+    direction2 = "W"
+  elif direction2 == "W":
+    direction2 = "N"
+
+def moveforward2():
+  print("Moving Forward")
+  global x2,y2,direction2
+  if direction2 == "N":
+      y2 = y2 + 1
+  elif direction2 == "E":
+      x2 = x2 + 1
+  elif direction2 == "S":
+      y2 = y2 - 1
+  elif direction2 == "W":
+      x2 = x2 - 1
+commands1 = ["L","M","L","M","L","M","L","M","M"]
+for c in commands1:
+  print(c)
+  if c == "L":
+    turnleft1()
+  elif c == "R":
+    turnright1()
+  elif c == "M":
+    moveforward1()
+commands2 = ["M","M","R","M","M","R","M","R","R","M"]
+for c in commands2:
+  print(c)
+  if c == "L":
+    turnleft2()
+  elif c == "R":
+    turnright2()
+  elif c == "M":
+    moveforward2()
+
+print(x1)
+print(y1)
+print(direction1)
+print(x2)
+print(y2)
+print(direction2)
